@@ -1,0 +1,446 @@
+/*==================== FONTS ====================*/
+/* @font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../fonts/Montserrat-Regular.ttf');
+} */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;700&display=swap');
+@font-face {
+    font-family: 'Optima';
+    src: url('../fonts/Optima.ttc');
+}
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 83.17px;
+
+    /*========== Colors ==========*/
+    --main-color: rgb(48, 72, 60);
+    --secondary-color: rgb(206, 224, 159);
+    --text-color: rgb(65, 61, 75);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Montserrat', sans-serif;
+    --heading-font: 'Optima';
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --h1-font-size: 2.9075rem;
+    --h2-font-size: 1.375rem;
+    --btn-font-size: 1rem;
+    --text-font-size: .875rem;
+}
+
+
+
+/*==================== BASE ====================*/
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    position: relative;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+section{
+    width: 100%;
+    padding: 6rem 1rem 1rem;
+    margin: 0;
+    height: fit-content;
+}
+
+h2{
+    font-family: var(--heading-font);
+    font-size: var(--h2-font-size);
+    font-weight: bold;
+    width: 100%;
+    /* text-align: center; */
+    margin: 0 0 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+p{
+    font-size: var(--text-font-size);
+    color: var(--text-color);
+    font-weight: 300;
+    line-height: 1.6;
+    padding: 0 1rem;
+    font-family: var(--body-font);
+}
+
+ a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    max-width: 100%;
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+.container{
+    max-width: 1140px;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.flex{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.grid{
+    display: grid;
+}
+
+/*==================== LAYOUT ====================*/
+
+
+/*==================== NAV ====================*/
+nav{
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding: .5rem;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    transition: .4s;
+    box-shadow: none;
+}
+html:not([data-scroll='0']) nav{
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+}
+
+nav .container{
+    justify-content: space-between;
+}
+
+nav img{
+    width: 170px;
+    margin: 0;
+    padding: 0;
+}
+
+
+#menu{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    background: #fff;
+    transition: all .4s ease-in-out;
+    z-index: 9;
+}
+
+@media (max-width: 953px){
+    #menu{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        height: 0;
+        flex-direction: column;
+        row-gap: 1rem;
+        width: 100%;
+        transition: all .4s ease-in-out;
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,0.25);
+    }
+
+    #menu.active{
+        height: calc(100vh - var(--header-height));
+    }
+}
+
+@media (max-width: 767px){
+    #menu{
+        top: 82px;
+    }
+
+    #menu.active{
+        height: calc(100vh -82px);
+    }
+}
+
+
+
+nav .toggle{
+    width: 2.5rem;
+    margin-inline-end: 1rem;
+    display: none;
+    cursor: pointer;
+    display: none;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+nav .toggle::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transform: translateY(5px);
+    background-color: var(--main-color);
+    transition: .4s;
+}
+
+nav .toggle.active::before{
+    transform: translateY(0px) rotate(45deg);
+}
+
+nav .toggle::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-5px);
+    background-color: var(--main-color);
+    transition: .4s;
+}
+
+nav .toggle.active::after{
+    transform: translateY(0px) rotate(-45deg);
+}
+
+@media (max-width: 953px){
+    nav .toggle{
+        display: flex;
+    }
+}
+
+#menu li{
+    margin: 0 .5rem ;
+    padding: 0;
+}
+
+#menu li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    font-size: .875rem;
+    font-weight: normal;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: .5rem 0;
+}
+
+#menu li a::after{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color);
+    transition: .4s;
+}
+
+#menu li a:hover,
+#menu li a.active{
+    color: var(--secondary-color);
+}
+
+#menu li a:hover::after,
+#menu li a.active::after{
+    left: 0;
+    background-color: var(--secondary-color);
+}
+
+
+/*==================== HOME ====================*/
+#home{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/hero-bg.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 0;
+}
+
+@media (max-width: 400px) {
+    #home{
+        padding: 3rem .5rem 0;
+        font-size: 14px;
+    }
+}
+
+#home .container{
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#home .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+#home .content h1{
+    font-size: var(--h1-font-size);
+    font-family: var(--heading-font);
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+#home .content h1::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 45px;
+    height: 1px;
+    background-color: #cdd79a;
+    margin-top: 1.5rem;
+}
+
+#home .content p{
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #fff;
+    width: 90%;
+    margin: 0 auto 1rem;
+}
+
+/*==================== BUTTONS ====================*/
+.btn{
+    color: #fff;
+    font-size: 1rem;
+    padding: var(--text-font-size) 2rem;
+    border: 1px solid #fff;
+    font-family: var(--body-font) ;
+    font-weight: 300;
+}
+
+/*==================== ABOUT ====================*/
+#about .container{
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 573px) {
+    #about .container{
+        flex-direction: column;
+    }
+}
+
+#about .container .left{
+    width: fit-content;
+}
+
+#about .container .left img{
+    width: 230px;
+}
+
+#about .container .right{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 573px) {
+    #about .container .right{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+#about p{
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+#about .btn{
+    color: var(--main-color);
+    border-color: var(--main-color);
+    width: fit-content;
+}
+
+/*==================== SKILLS ====================*/
+
+
+/*==================== QUALIFICATION ====================*/
+
+
+/*==================== SERVICES ====================*/
+
+
+/* Active Modal */
+
+
+/*==================== PORTFOLIO ====================*/
+
+
+/*==================== PROJECT IN MIND ====================*/
+
+
+/*==================== TESTIMONIAL ====================*/
+
+
+/*==================== CONTACT ME ====================*/
+
+
+/*==================== FOOTER ====================*/
+
+
+/*========== SCROLL UP ==========*/
+
+
+/* Show scroll */
+
+
+/*========== SCROLL BAR ==========*/
+
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+
+
+/* For medium devices */
+
+
+/* For large devices */
