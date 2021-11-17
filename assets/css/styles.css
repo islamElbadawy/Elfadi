@@ -30,9 +30,8 @@
     --h1-font-size: 2.9075rem;
     --h2-font-size: 1.375rem;
     --btn-font-size: 1rem;
-    --text-font-size: .875rem;
+    --text-font-size: 1rem;
 }
-
 
 
 /*==================== BASE ====================*/
@@ -75,7 +74,7 @@ h2{
 p{
     font-size: var(--text-font-size);
     color: var(--text-color);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6;
     padding: 0 1rem;
     font-family: var(--body-font);
@@ -283,6 +282,7 @@ nav .toggle.active::after{
 
 /*==================== HOME ====================*/
 #home{
+    /* height: calc(100vh - var(--header-height)); */
     height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/hero-bg.png');
     background-size: cover;
@@ -290,11 +290,13 @@ nav .toggle.active::after{
     background-repeat: no-repeat;
     background-position: center;
     padding-bottom: 0;
+    position: relative;
+    /* top: var(--header-height); */
 }
 
 @media (max-width: 400px) {
     #home{
-        padding: 3rem .5rem 0;
+        padding: 0 .5rem ;
         font-size: 14px;
     }
 }
@@ -302,7 +304,7 @@ nav .toggle.active::after{
 #home .container{
     height: 100%;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 #home .content{
@@ -324,6 +326,11 @@ nav .toggle.active::after{
     justify-content: center;
     padding-bottom: 1.5rem;
     text-transform: capitalize;
+}
+@media (max-width: 480px) {
+    #home .content h1{
+        font-size: 2.25rem;
+    }
 }
 
 #home .content h1::after{
