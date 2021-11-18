@@ -19,6 +19,7 @@
 
     /*========== Colors ==========*/
     --main-color: rgb(48, 72, 60);
+    --main-color-alt: rgb(216, 225, 160);
     --secondary-color: rgb(206, 224, 159);
     --text-color: rgb(65, 61, 75);
 
@@ -29,6 +30,7 @@
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --h1-font-size: 2.9075rem;
     --h2-font-size: 1.375rem;
+    --h3-font-size: 1.125rem;
     --btn-font-size: 1rem;
     --text-font-size: 1rem;
 }
@@ -54,7 +56,7 @@ body{
 
 section{
     width: 100%;
-    padding: 6rem 1rem 1rem;
+    padding: 6rem 1rem 3rem;
     margin: 0;
     height: fit-content;
 }
@@ -63,12 +65,18 @@ h2{
     font-family: var(--heading-font);
     font-size: var(--h2-font-size);
     font-weight: bold;
-    width: 100%;
-    /* text-align: center; */
+    width: fit-content;
     margin: 0 0 1rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--main-color);
+}
+
+h3{
+    font-family: var(--heading-font);
+    font-size: var(--h3-font-size);
+    letter-spacing: 3px;
+    text-transform: capitalize;
 }
 
 p{
@@ -111,6 +119,7 @@ img{
 
 .grid{
     display: grid;
+    gap: 1.5rem;
 }
 
 /*==================== LAYOUT ====================*/
@@ -284,7 +293,7 @@ nav .toggle.active::after{
 #home{
     /* height: calc(100vh - var(--header-height)); */
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('../img/hero-bg.png');
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('../img/hero-bg.png');
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -349,7 +358,7 @@ nav .toggle.active::after{
     text-align: center;
     color: #fff;
     width: 90%;
-    margin: 0 auto 1rem;
+    margin: 0 auto 2rem;
 }
 
 /*==================== BUTTONS ====================*/
@@ -363,6 +372,9 @@ nav .toggle.active::after{
 }
 
 /*==================== ABOUT ====================*/
+#about{
+    background-color: var(--main-color-alt);
+}
 #about .container{
     justify-content: center;
     align-items: center;
@@ -407,8 +419,45 @@ nav .toggle.active::after{
     width: fit-content;
 }
 
-/*==================== SKILLS ====================*/
+/*==================== Features ====================*/
+#features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
 
+#features .container{
+    grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+    justify-content: center;
+}
+
+#features  h2{
+    margin-bottom: 4rem;
+}
+
+#features .feature{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#features .feature img{
+    width: 50px;
+}
+
+#features .feature h3{
+    margin-bottom: 0;
+    color: var(--text-color);
+}
+
+#features .feature p{
+    font-size: .875rem;
+    text-align: center;
+}
 
 /*==================== QUALIFICATION ====================*/
 
