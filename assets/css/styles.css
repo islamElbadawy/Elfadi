@@ -56,7 +56,7 @@ body{
 
 section{
     width: 100%;
-    padding: 6rem 1rem 3rem;
+    padding: 3rem 1rem;
     margin: 0;
     height: fit-content;
     position: relative;
@@ -674,6 +674,8 @@ nav .toggle.active::after{
     font-size: 1rem;
     color: #fff;
     font-weight: bold;
+    font-family: var(--heading-font);
+    letter-spacing: 3px;
 }
 
 .footer .center{
@@ -709,7 +711,7 @@ nav .toggle.active::after{
 }
 
 .footer .right .newsletter input{
-    width: 200px;
+    flex: 1;
 }
 
 .footer .right .newsletter .subscribe{
@@ -727,8 +729,29 @@ nav .toggle.active::after{
     display: flex;
     flex-direction: row;
     column-gap: .5rem;
+    justify-content: space-between;
+    padding-left: 0;
+}
+
+.footer .copyrights{
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-top: 2rem;
+    padding-left: 0;
+}
+
+.footer .copyrights .policy-links{
+    display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     padding-left: 0;
+    gap: .5rem;
+}
+
+.footer .copyrights .policy-links a{
+    color: #fff;
+    font-size: .875rem;
 }
 /*========== SCROLL UP ==========*/
 
