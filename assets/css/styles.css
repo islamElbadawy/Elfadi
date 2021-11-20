@@ -59,6 +59,8 @@ section{
     padding: 6rem 1rem 3rem;
     margin: 0;
     height: fit-content;
+    position: relative;
+    top: var(--header-height);
 }
 
 h2{
@@ -291,8 +293,8 @@ nav .toggle.active::after{
 
 /*==================== HOME ====================*/
 #home{
-    /* height: calc(100vh - var(--header-height)); */
-    height: 100vh;
+    height: calc(100vh - var(--header-height));
+    /* height: 100vh; */
     width: 100%;
     /* background-image: linear-gradient(rgba(48,72,60,0.7),rgba(48,72,60,0.7)), url('../img/hero-bg.png'); */
     background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('../img/hero-bg.png');
