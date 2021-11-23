@@ -62,6 +62,7 @@ var swiper = new Swiper(".gallery", {
     el: ".swiper-pagination",
   },
 });
+swiper.slideTo(2, 1000)
 
 
 /*==================== SHOW SCROLL UP ====================*/ 

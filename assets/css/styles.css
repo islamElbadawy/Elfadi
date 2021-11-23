@@ -56,7 +56,7 @@ body{
 
 section{
     width: 100%;
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
     margin: 0;
     height: fit-content;
     position: relative;
@@ -593,13 +593,19 @@ nav .toggle.active::after{
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
-    background-image: linear-gradient(rgba(48, 72, 60,0.6),rgba(48, 72, 60,0.6)), url('../img/testimonials-bg.png');
+    /* background-image: linear-gradient(rgba(48, 72, 60,0.6),rgba(48, 72, 60,0.6)), url('../img/testimonials-bg.png');
+    background-repeat:   no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
 }
 
 #works  h2{
     width: fit-content;
     align-self: center;
-    color: #fff;
+    /* color: #fff; */
 }
 
 #works .gallery{
@@ -614,6 +620,7 @@ nav .toggle.active::after{
     background-size: cover;
     width: 300px;
     height: 300px;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
   }
 
   .swiper-slide img {
@@ -625,7 +632,16 @@ nav .toggle.active::after{
 
 
   .swiper-button-next, .swiper-button-prev{
-      color: #cdd79a;
+      /* color: #cdd79a; */
+      color: var(--main-color);
+  }
+
+  .swiper-button-next{
+      right: 1rem;
+  }
+
+  .swiper-button-prev{
+      left: 1rem;
   }
 
   @media (max-width: 480px) {
@@ -635,8 +651,27 @@ nav .toggle.active::after{
   }
 
 
-/*==================== TESTIMONIAL ====================*/
+/*==================== AREA OF INTEREST ====================*/
+.area{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(48, 72, 60,.6),rgba(48, 72, 60,.6)), url('../img/Africa.jpg');
+    background-repeat:   no-repeat;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
+.area h2{
+    color: #fff;
+    font-size: 5rem;
+    /* color: var(--main-color); */
+    opacity: .4;
+}
 
 /*==================== CONTACT ME ====================*/
 
