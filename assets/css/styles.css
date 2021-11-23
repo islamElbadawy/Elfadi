@@ -324,7 +324,7 @@ nav .toggle.active::after{
     background-size: cover;
     padding-bottom: 0;
     position: relative;
-    top: var(--header-height);
+    /* top: var(--header-height); */
 }
 
 @media (max-width: 400px) {

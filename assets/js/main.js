@@ -44,6 +44,7 @@ window.addEventListener('scroll', scrollActive)
 var swiper = new Swiper(".gallery", {
   effect: "coverflow",
   grabCursor: true,
+  loop: true,
   centeredSlides: true,
   slidesPerView: "auto",
   coverflowEffect: {
@@ -51,7 +52,7 @@ var swiper = new Swiper(".gallery", {
     stretch: 0,
     depth: 100,
     modifier: 1,
-    slideShadows: true,
+    slideShadows: true
   },
   // Navigation arrows
   navigation: {
@@ -62,7 +63,9 @@ var swiper = new Swiper(".gallery", {
     el: ".swiper-pagination",
   },
 });
-swiper.slideTo(2, 1000)
+
+// let length = document.querySelectorAll('.swiper-slide').length;
+// swiper.slideTo(Math.floor(length/2), 1000)
 
 
 /*==================== SHOW SCROLL UP ====================*/ 
