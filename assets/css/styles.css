@@ -671,6 +671,7 @@ nav .toggle.active::after{
     font-size: 5rem;
     /* color: var(--main-color); */
     opacity: .4;
+    text-align: center;
 }
 
 /*==================== CONTACT ME ====================*/
