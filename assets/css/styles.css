@@ -593,51 +593,48 @@ nav .toggle.active::after{
     display: flex;
     flex-direction: column;
     row-gap: 3rem;
-}
-#works .header{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    background-image: linear-gradient(rgba(48, 72, 60,0.6),rgba(48, 72, 60,0.6)), url('../img/testimonials-bg.png');
 }
 
-#works .header h2{
-    margin: 0;
+#works  h2{
+    width: fit-content;
+    align-self: center;
+    color: #fff;
 }
 
 #works .gallery{
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
-    gap: 0;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 3rem;
 }
 
-#works .gallery .img-holder{
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
     height: 300px;
-    padding: 0;
-    overflow: hidden;
-}
-#works .gallery img{
-    height: 100%;
+  }
+
+  .swiper-slide img {
+    display: block;
     width: 100%;
-    margin: 0;
-    transform: scale(1) rotate(0);
-    transition: .4s;
-}
+    height: 100%;
+    min-width: 300px;
+  }
 
-#works .gallery img:hover{
-    transform: scale(1.1) ;
-}
 
-#works .btn{
-    color: #11e2d3;
-    border-color: #11e2d3;
-    width: fit-content;
-    margin: 0 auto;
-    font-weight: bold;
-}
+  .swiper-button-next, .swiper-button-prev{
+      color: #cdd79a;
+  }
+
+  @media (max-width: 480px) {
+    .swiper-button-next, .swiper-button-prev{
+        display: none;
+    }
+  }
+
+
 /*==================== TESTIMONIAL ====================*/
 
 
