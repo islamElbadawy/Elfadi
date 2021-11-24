@@ -39,9 +39,26 @@ function scrollActive(){
 window.addEventListener('scroll', scrollActive)
 
 
-/*==================== Slider ====================*/ 
+/*==================== WORKS SLIDER ====================*/ 
 
 var swiper = new Swiper(".gallery", {
+  cssMode: true,
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  mousewheel: true,
+  keyboard: true,
+});
+
+
+/*==================== SERVICE SLIDER ====================*/ 
+
+var swiper = new Swiper(".service-gallery .gallery", {
   cssMode: true,
   loop: true,
   navigation: {
