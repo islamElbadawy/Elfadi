@@ -322,10 +322,6 @@ nav .toggle.active::after{
     /* top: var(--header-height); */
 }
 
-#home:target {
-    padding-top: 6rem;
-}
-
 @media (max-width: 400px) {
     #home{
         padding: 0 .5rem ;
@@ -677,7 +673,7 @@ nav .toggle.active::after{
     height: calc(100vh - var(--header-height));
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background-image: linear-gradient(rgba(0,0,0, 0.6),rgba(0,0,0,.6)), url('../img/africa.jpg');
     background-repeat:   no-repeat;
     background-position: center center;
@@ -692,6 +688,40 @@ nav .toggle.active::after{
     font-size: 5rem;
     opacity: .4;
     text-align: center;
+}
+
+
+/*==================== PARTNER ====================*/
+#partners{
+    display: flex;
+    flex-direction: column ;
+}
+
+#partners  h2{
+    width: fit-content;
+    align-self: center;
+}
+
+#partners .container{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+#partners a{
+    width: fit-content;
+}
+
+#partners a img{
+    width: 150px;
+    height: 100px;
+    filter: grayscale();
+    transition: .4s;
+}
+
+#partners a:hover img{
+    filter: none;
+    transform: scale(1.1);
 }
 
 /*==================== FOOTER ====================*/
