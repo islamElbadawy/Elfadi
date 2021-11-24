@@ -44,6 +44,9 @@ window.addEventListener('scroll', scrollActive)
 var swiper = new Swiper(".gallery", {
   cssMode: true,
   loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -61,6 +64,9 @@ var swiper = new Swiper(".gallery", {
 var swiper = new Swiper(".service-gallery .gallery", {
   cssMode: true,
   loop: true,
+  autoplay: {
+    delay: 5000,
+  },
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
