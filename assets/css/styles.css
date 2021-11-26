@@ -687,6 +687,7 @@ nav .toggle.active::after{
     padding-bottom: 1rem;
     background-color: #f9f9f9;
     height: calc(100vh - var(--header-height));
+    /* min-height: 300px; */
 }
 
 #works  h2{
@@ -706,6 +707,7 @@ nav .toggle.active::after{
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
+    min-height: 300px;
   }
 
 .swiper-slide::after{
@@ -729,6 +731,7 @@ nav .toggle.active::after{
     width: 100%;
     height: 100%;
     min-width: 300px;
+    min-height: 300px;
   }
 
   .swiper-slide .content{
@@ -914,6 +917,15 @@ nav .toggle.active::after{
     margin: 0;
 }
 
+.footer .col .social-media li a{
+    display: inline-flex;
+    transition: .8s;  
+}
+
+.footer .col .social-media li a:hover{
+    transform: rotate(360deg); 
+}
+
 .footer .copyrights{
     justify-content: space-between;
     align-items: center;
@@ -932,7 +944,13 @@ nav .toggle.active::after{
 
 .footer .copyrights .policy-links a{
     color: #fff;
+    display: inline-flex;
     font-size: .875rem;
+    transition: .4s;
+}
+
+.footer .copyrights .policy-links a:hover{
+    color: #cdd79a;
 }
 /*========== SCROLL UP ==========*/
 
