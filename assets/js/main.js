@@ -38,10 +38,22 @@ function scrollActive(){
 
 window.addEventListener('scroll', scrollActive)
 
+/*==================== HERO SLIDER ====================*/ 
+
+var heroSwiper = new Swiper(".hero-slider", {
+  cssMode: true,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+  mousewheel: true,
+  keyboard: true,
+});
+
 
 /*==================== WORKS SLIDER ====================*/ 
 
-var swiper = new Swiper(".gallery", {
+var worksSwiper = new Swiper(".gallery", {
   cssMode: true,
   loop: true,
   autoplay: {
@@ -61,7 +73,7 @@ var swiper = new Swiper(".gallery", {
 
 /*==================== SERVICE SLIDER ====================*/ 
 
-var swiper = new Swiper(".service-gallery .gallery", {
+var servicesSwiper = new Swiper(".service-gallery .gallery", {
   cssMode: true,
   loop: true,
   autoplay: {
